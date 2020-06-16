@@ -5,11 +5,13 @@ import { NavigationContainer } from '@react-navigation/native';
 import AuthNavigation from './AuthNavigation';
 import AppNavigation from './AppNavigation';
 
-export default function AppContainer() {
+export default function AppContainer({signIn}) {
   return (
     <NavigationContainer>
-      <AuthNavigation />
-      <AppNavigation />
+      {signIn 
+        ? (<AppNavigation />)
+        : (<AuthNavigation />)
+      }
     </NavigationContainer>
   )
 }

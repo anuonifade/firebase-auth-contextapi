@@ -1,12 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import AppContainer from './navigation';
-import Firebase, {FirebaseProvider} from './config/Firebase';
+import Firebase, {FirebaseProvider} from './config';
 
 export default function App() {
   return (
     <FirebaseProvider value={Firebase}>
-      <AppContainer />
+      <AppContainer signIn={false}/>
     </FirebaseProvider>
   );
 }
